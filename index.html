@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" async></script>
+</head>
+
+<body>
+    <div id="navbar">
+        <a >FORMACIÓN NODE.JS</a>
+        
+      </div>
+    <div class="sidebar" >
+        <a class="tablinks" onclick="openBloque(event, 'App')" id="defaultOpen">Gestión de la App</a>
+        <a class="tablinks" onclick="openBloque(event, 'Plantillas')" >Motor de Plantillas</a>
+        <a class="tablinks" onclick="openBloque(event, 'Paris')">Paris</a>
+        <a class="tablinks" onclick="openBloque(event, 'Tokyo')">Tokyo</a>
+
+    </div>
+
+
+    <div class="content" style="padding: 40px;">
+        <div id="App" class="tabcontent">
+            <h3 class="borde_titulo1">Aplicación, modulos necesarios y gestión de carpetas</h3>
+            <div class="w3-container">
+                <h4 style="text-decoration: underline;">Aplicaciones necesarias</h4>
+                <p>Node.js --> node --version (verificamos que tenemos instalado la version de node.js)</p>
+                
+                <hr style="border-top: 3px solid #bbb;"></hr> 
+
+                <h4 style="text-decoration: underline;">Modulos principales</h4>
+                <p>Linea para lanzar los distintos modulos --> npm i express connect-flash bcryptjs express-handlebars express-session method-override passport passport-local</p>
+                <p>npm i express --> Crear el servidor</p>
+                <p>npm i connect-flash --> Mensajeria entre las vistas (usa cookies o sesion)</p>
+                <p>npm i bcryptjs --> Modulo de cifrado, para la gestion de contraseñas</p>
+                <p>npm i express-handlebars --> Gestión de plantillas para las vistas con Express(ejs)/p>
+                <p>npm i express-session --> Gestión de sesiones</p>
+                <p>npm i method-override --> Gestión de envios PUT y DELETE en la vista</p>
+                <p>npm i mongoose --> ORM de base de datos mongodb</p>
+                <p>npm i passport --> Modulo para la gestión de login - Autenticación (en combinación con bcryptjs)</p>
+                <p>npm i passport-local --> Gestión de base de datos local</p>
+                <p>* Se incorporan dentro del archivo package.json en el grupo dependencies</p>
+
+                <hr style="border-top: 3px solid #bbb;"></hr> 
+
+                <h4 style="text-decoration: underline;">Modulos de Desarrollo</h4>
+               
+                <p>Linea para lanzar los distintos modulos --> npm i dotenv nodemon npm-check-updates -D</p>
+                <p>npm i dotenv --> Permite el uso de variables de entorno en nuestra app</p>
+                <p>npm i nodemon --> Reinicia el servidor de forma automatica</p>
+                <p>npm i npm-check-updates --> Mantiene el proyecto con las ultimas actualizaciones de los modulos instalaladas</p>
+                <p>* Se incorporan dentro del archivo package.json en el grupo devDependencies</p>
+               
+                <hr style="border-top: 3px solid #bbb;"></hr> 
+
+                <h4 style="text-decoration: underline;">Gestión de carpetas</h4>
+
+                <p>src/index.js --> Fichero principal </p>
+                <p>src/server.js --> Gestión del servidor (Express)</p>
+                <p>src/database.js --> Gestión de conexión base de datos</p>
+                <p>src/config --> Gestión de configuraciones de modulos</p>
+                <p>src/controllers --> Almacenar las funciones cuando un usuario visite una ruta de nuestro servidor</p>
+                <p>src/helpers --> Almacenar funciones que se usen para la vista (tipo bucles,condiciones,etc...)</p>
+                <p>src/models --> Almacenar los modelos de datos, esquemas...</p>
+                <p>src/public --> Almacen de archivos publicos tipo (css,imagenes,etc...)</p>
+                <p>src/routes --> Gestión de rutas del servidor</p>
+                <p>src/views --> Almacen de los archivos del gestor de plantillas</p>
+
+            </div>
+        </div>
+    
+        <div id="Plantillas" class="tabcontent">
+            <h3 class="borde_titulo1">Motor de Plantillas</h3>
+            <p>Enlace a servidor Node</p>
+            <a href="https://appnodehbs1.herokuapp.com/" target="_blank">Servidor con Node</a> 
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h3 class="borde_titulo1">Paris</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3 class="borde_titulo1">Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
