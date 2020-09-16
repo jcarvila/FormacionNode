@@ -7,17 +7,18 @@
     <title>Indice</title>
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="main.js" async></script>
 </head>
 
 <body>
     <div id="navbar">
-        <a >FORMACIÓN NODE.JS</a>
-        
-      </div>
-    <div class="sidebar" >
+        <a>FORMACIÓN NODE.JS</a>
+
+    </div>
+    <div class="sidebar">
         <a class="tablinks" onclick="openBloque(event, 'App')" id="defaultOpen">Gestión de la App</a>
-        <a class="tablinks" onclick="openBloque(event, 'Plantillas')" >Motor de Plantillas</a>
+        <a class="tablinks" onclick="openBloque(event, 'Plantillas')">Motor de Plantillas</a>
         <a class="tablinks" onclick="openBloque(event, 'Paris')">Paris</a>
         <a class="tablinks" onclick="openBloque(event, 'Tokyo')">Tokyo</a>
 
@@ -25,16 +26,19 @@
 
 
     <div class="content" style="padding: 40px;">
+        <!-- Gestion de App-->
         <div id="App" class="tabcontent">
             <h3 class="borde_titulo1">Aplicación, modulos necesarios y gestión de carpetas</h3>
             <div class="w3-container">
                 <h4 style="text-decoration: underline;">Aplicaciones necesarias</h4>
                 <p>Node.js --> node --version (verificamos que tenemos instalado la version de node.js)</p>
-                
-                <hr style="border-top: 3px solid #bbb;"></hr> 
+
+                <hr style="border-top: 3px solid #bbb;">
+                </hr>
 
                 <h4 style="text-decoration: underline;">Modulos principales</h4>
-                <p>Linea para lanzar los distintos modulos --> npm i express connect-flash bcryptjs express-handlebars express-session method-override passport passport-local</p>
+                <p>Linea para lanzar los distintos modulos --> npm i express connect-flash bcryptjs express-handlebars
+                    express-session method-override passport passport-local</p>
                 <p>npm i express --> Crear el servidor</p>
                 <p>npm i connect-flash --> Mensajeria entre las vistas (usa cookies o sesion)</p>
                 <p>npm i bcryptjs --> Modulo de cifrado, para la gestion de contraseñas</p>
@@ -46,17 +50,20 @@
                 <p>npm i passport-local --> Gestión de base de datos local</p>
                 <p>* Se incorporan dentro del archivo package.json en el grupo dependencies</p>
 
-                <hr style="border-top: 3px solid #bbb;"></hr> 
+                <hr style="border-top: 3px solid #bbb;">
+                </hr>
 
                 <h4 style="text-decoration: underline;">Modulos de Desarrollo</h4>
-               
+
                 <p>Linea para lanzar los distintos modulos --> npm i dotenv nodemon npm-check-updates -D</p>
                 <p>npm i dotenv --> Permite el uso de variables de entorno en nuestra app</p>
                 <p>npm i nodemon --> Reinicia el servidor de forma automatica</p>
-                <p>npm i npm-check-updates --> Mantiene el proyecto con las ultimas actualizaciones de los modulos instalaladas</p>
+                <p>npm i npm-check-updates --> Mantiene el proyecto con las ultimas actualizaciones de los modulos
+                    instalaladas</p>
                 <p>* Se incorporan dentro del archivo package.json en el grupo devDependencies</p>
-               
-                <hr style="border-top: 3px solid #bbb;"></hr> 
+
+                <hr style="border-top: 3px solid #bbb;">
+                </hr>
 
                 <h4 style="text-decoration: underline;">Gestión de carpetas</h4>
 
@@ -73,12 +80,60 @@
 
             </div>
         </div>
-    
+
+        <!-- Motor de plantilla-->
         <div id="Plantillas" class="tabcontent">
             <h3 class="borde_titulo1">Motor de Plantillas</h3>
+
+            <h4 style="text-decoration: underline;">Uso del motor de plantillas con Handlebars</h4>
+            <p>1.- Requerimos el modulo de express-handlebars</p>
+
+            <p>2.- Asignamos el motor de plantilla a nuestro servidor</p>
+            <p class="codigo">
+                <span style="display: block;">app.set('view engine','.hbs');</span>
+            </p>
+
+            <p>3.- Indicamos cual es la plantilla por defecto. Indicamos donde estan ubicadas las carpetas (layouts y
+                partials). Indicamos la extension de los ficheros de plantilla</p>
+            <p class="codigo">
+                <span style="display: block;">app.engine('.hbs',exphbs({</span>
+                <span style="padding-left: 20px;display: block;">defaultLayout: 'main',</span>
+                <span style="padding-left: 20px;display: block;">layoutsDir: path.join(app.get('views'),'layouts'),
+                </span>
+                <span style="padding-left: 20px;display: block;">partialsDir: path.join(app.get('views'),'partials'),
+                </span>
+                <span style="padding-left: 20px;display: block;"> extname: '.hbs'</span>
+                <span style="padding-left: 20px;display: block;">})); </span>
+                <span style="display: block;">app.set('view engine','.hbs');</span>
+            </p>
+
+            <p>4.- Asignamos el motor de plantilla a nuestro servidor</p>
+            <p class="codigo">
+                <span style="display: block;">app.set('view engine','.hbs');</span>
+            </p>
+
+            <p>5.- Configuramos la ruta. Busca en la carpeta 'views' que previamente hemos configurado. Recuerda en index.hbs solo tiene la parte variable, la parte fija la tiene main.hbs, que hemos configurado en layoutsDir </p>
+            <p class="codigo">
+                <span style="display: block;">app.get('/', (req,res) => {</span>
+                <span style="padding-left: 20px;display: block;">res.render('index');</span>
+                <span style="display: block;">})</span>
+            </p>
+
+            <p>6.- Distribucion de carpetas en el proyecto</p>
+            <p class="codigo">
+                <span style="display: block;"><i class='far fa-folder'></i> views</span>
+                <span style="padding-left: 20px;display: block;"><i class='far fa-folder'></i> layouts</span>
+                <span style="padding-left: 40px;display: block;"><i class='far fa-file'></i> main.hbs</span>
+                <span style="padding-left: 20px;display: block;"><i class='far fa-folder'></i> partials</span>
+                <span style="padding-left: 40px;display: block;"><i class='far fa-file'></i> anexo1.hbs</span>
+                <span style="display: block;"><i class='far fa-file'></i> index.hbs</span>
+            </p>
+
             <p>Enlace a servidor Node</p>
-            <a href="https://appnodehbs1.herokuapp.com/" target="_blank">Servidor con Node</a> 
+            <a href="https://appnodehbs1.herokuapp.com/" target="_blank">Servidor con Node</a>
         </div>
+
+        <!-- Motor de plantilla-->
 
         <div id="Paris" class="tabcontent">
             <h3 class="borde_titulo1">Paris</h3>

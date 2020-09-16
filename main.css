@@ -78,3 +78,10 @@ body {
     text-decoration: none;
     font-size: 17px;
   }
+
+  .codigo{
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+
